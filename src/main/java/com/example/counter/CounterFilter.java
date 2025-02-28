@@ -23,7 +23,6 @@ public class CounterFilter implements ContainerRequestFilter {
     @Override
     public void filter(ContainerRequestContext requestContext) {
         logger.info("Filtering request to path: " + requestContext.getUriInfo().getPath());
-        // For example, increment the counters for every incoming request.
         totalCounter.increment();
         perRequestCounterProvider.get().increment();
     }
