@@ -27,7 +27,6 @@ public class RestHello {
     private static final Logger logger = LoggerFactory.getLogger(RestHello.class);
     private static final ExecutorService executor = Executors.newCachedThreadPool(); //could also inject this for better reuse
 
-
     @Inject
     public RestHello(Hello hello, @Named("wave") String wave, TotalCounter totalCounter, PerRequestCounter perRequestCounter) {
         this.wave = wave;
