@@ -17,6 +17,8 @@ dependencies {
     implementation("org.glassfish.jersey.containers:jersey-container-servlet:3.1.10")
     implementation("org.glassfish.jersey.inject:jersey-hk2:3.1.10")
     implementation("org.glassfish.hk2:hk2-utils:3.1.1")
+    implementation("org.slf4j:slf4j-api:2.0.9")
+    implementation("ch.qos.logback:logback-classic:1.4.9")
 }
 
 application {

@@ -18,7 +18,7 @@ public class Main {
 
         // Create a ResourceConfig and register the package and the binder
         ResourceConfig config = new ResourceConfig();
-        config.packages("com.example.rest");
+        config.packages("com.example"); //will scan this and all sub packages on startup
         config.register(new AppBinder());
 
         // Create a ServletHolder for Jersey's ServletContainer using the ResourceConfig
