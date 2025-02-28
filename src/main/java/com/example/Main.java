@@ -1,8 +1,9 @@
 package com.example;
 
-import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.ee10.servlet.ServletContextHandler;
 import org.eclipse.jetty.ee10.servlet.ServletHolder;
+import org.eclipse.jetty.server.Server;
+import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.servlet.ServletContainer;
 
 public class Main {
@@ -15,11 +16,14 @@ public class Main {
         context.setContextPath("/");
         server.setHandler(context);
 
-        // Create a ServletHolder for Jersey's ServletContainer
-        ServletHolder jerseyServlet = new ServletHolder(ServletContainer.class);
+        // Create a ResourceConfig and register the package and the binder
+        ResourceConfig config = new ResourceConfig();
+        config.packages("com.example.rest");
+        config.register(new AppBinder());
+
+        // Create a ServletHolder for Jersey's ServletContainer using the ResourceConfig
+        ServletHolder jerseyServlet = new ServletHolder(new ServletContainer(config));
         jerseyServlet.setInitOrder(0);
-        // Configure Jersey to scan for resources and providers in the com.example.rest package
-        jerseyServlet.setInitParameter("jersey.config.server.provider.packages", "com.example.rest");
         context.addServlet(jerseyServlet, "/*");
 
         // Start the server
