@@ -18,8 +18,8 @@ public class Main {
         // Create a ServletHolder for Jersey's ServletContainer
         ServletHolder jerseyServlet = new ServletHolder(ServletContainer.class);
         jerseyServlet.setInitOrder(0);
-        // Configure Jersey to scan for resources in the com.example package
-        jerseyServlet.setInitParameter("jersey.config.server.provider.packages", "com.example");
+        // Configure Jersey to scan for resources and providers in the com.example.rest package
+        jerseyServlet.setInitParameter("jersey.config.server.provider.packages", "com.example.rest");
         context.addServlet(jerseyServlet, "/*");
 
         // Start the server
