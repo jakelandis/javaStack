@@ -20,15 +20,21 @@ Ensure that you have the project set to Java 23 (or newer)
 Flex "hello world" based on language using Dependency injection for language selection.
 
 #### sync hello world in plain text
-``` curl -u admin:password localhost:8080/hello```
-``` curl -u admin:password -H "Accept-Language: es" localhost:8080/hello```
+``` 
+curl -u admin:password localhost:8080/hello
+curl -u admin:password -H "Accept-Language: es" localhost:8080/hello
+```
 
 #### async hello world in plain text
-``` curl -u admin:password localhost:8080/hello/async```
-``` curl -u admin:password -H "Accept-Language: es" localhost:8080/hello/async```
+``` 
+curl -u admin:password localhost:8080/hello/async
+curl -u admin:password -H "Accept-Language: es" localhost:8080/hello/async
+```
 
 #### echo the message passed in json back in json 
-``` curl -u admin:password -X POST -H "Content-Type: application/json" -d '{"message": "Hello, there!"}' http://localhost:8080/echo```
+``` 
+curl -u admin:password -X POST -H "Content-Type: application/json" -d '{"message": "Hello, there!"}' http://localhost:8080/echo
+```
 
 ## Notes
 
@@ -55,8 +61,7 @@ to/from JSON.
 
 This is also provides an example of using Gradle with Kotlin DSL to build the project and use of SLF4J with logback for logging.
 
-There is still much more that can be done with this setup and I have used these components as the basic stack in many different production
-systems with good success.
+There is still much more that can be done with this setup and this is just a starting point. 
 
 
 
