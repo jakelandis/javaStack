@@ -19,6 +19,7 @@ dependencies {
     implementation("org.glassfish.hk2:hk2-utils:3.1.1")
     implementation("org.slf4j:slf4j-api:2.0.9")
     implementation("ch.qos.logback:logback-classic:1.4.9")
+    implementation("org.glassfish.jersey.media:jersey-media-json-jackson:3.1.10")
 }
 
 application {

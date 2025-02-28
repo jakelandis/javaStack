@@ -18,3 +18,4 @@ Flex "hello world" based on language using Dependency injection for language sel
 
 ``` curl -u admin:password localhost:8080/hello```
 ``` curl -u admin:password -H "Accept-Language: es" localhost:8080/hello```
+``` curl -u admin:password -X POST -H "Content-Type: application/json" -d '{"message": "Hello, there!"}' http://localhost:8080/echo```

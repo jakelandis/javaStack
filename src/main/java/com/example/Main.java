@@ -21,6 +21,9 @@ public class Main {
         config.packages("com.example"); //will scan this and all sub packages on startup
         config.register(new AppBinder());
 
+        // Optionally, register Jackson explicitly:
+        //config.register(JacksonFeature.class); , no need to do this since the dependency does this for us
+
         // Create a ServletHolder for Jersey's ServletContainer using the ResourceConfig
         ServletHolder jerseyServlet = new ServletHolder(new ServletContainer(config));
         jerseyServlet.setInitOrder(0);
