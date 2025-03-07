@@ -20,6 +20,10 @@ dependencies {
     implementation("org.slf4j:slf4j-api:2.0.9")
     implementation("ch.qos.logback:logback-classic:1.4.9")
     implementation("org.glassfish.jersey.media:jersey-media-json-jackson:3.1.10")
+    //https://github.com/swagger-api/swagger-core/wiki/Swagger-2.X---Integration-and-configuration
+    implementation("io.swagger.core.v3:swagger-jaxrs2-jakarta:2.2.8")
+    implementation("io.swagger.core.v3:swagger-annotations-jakarta:2.2.8")
+
 }
 
 application {

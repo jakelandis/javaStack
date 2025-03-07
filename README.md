@@ -1,6 +1,6 @@
 # Java Stack
 
-A small application to help showcase a basic Java stack for building REST services using Jersey, HK2, Jetty, Gradle, SLF4J, and logback with support for basic authentication, JSON data binding, and async processing.
+A small application to help showcase a basic Java stack for building REST services using Jersey, OpenAPI, HK2, Jetty, Gradle, SLF4J, and logback with support for basic authentication, JSON data binding, and async processing.
 
 ## Run the project
 
@@ -36,10 +36,17 @@ curl -u admin:password -H "Accept-Language: es" localhost:8080/hello/async
 curl -u admin:password -X POST -H "Content-Type: application/json" -d '{"message": "Hello, there!"}' http://localhost:8080/echo
 ```
 
+#### get the generated openAPI spec
+```
+curl -u admin:password localhost:8080/openapi.json 
+curl -u admin:password localhost:8080/openapi.yaml
+
+# Copy and paste the output YAML to https://editor.swagger.io/ to see the pretty UI
+```
 ## Notes
 
 This sample application shows how to use JAX-RS (Jersey) in a servlet container (Jetty) with Dependency Injection (HK2) with 
-support for basic authentication, JSON data binding (Jackson) using JAX-B annotations and async processing with Gradle as the build system and logback with 
+support for basic authentication, JSON data binding (Jackson) using JAX-B annotations, Swagger for OpenAPI spec generation,  and async processing with Gradle as the build system and logback with 
 SLF4J as the logger.
 
 Control starts with the `Main` class which initializes all the required components and starts the Jetty server registering the JAX-RS and 

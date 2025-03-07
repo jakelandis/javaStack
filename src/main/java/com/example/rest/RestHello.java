@@ -3,6 +3,10 @@ package com.example.rest;
 import com.example.counter.PerRequestCounter;
 import com.example.counter.TotalCounter;
 import com.example.data.Hello;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -51,7 +55,7 @@ public class RestHello {
         executor.submit(() -> {
             try {
                 Thread.sleep(1000); // Simulate asynchronous processing delay
-                String response =   wave + " " + hello.sayHello() + " " + wave
+                String response = wave + " " + hello.sayHello() + " " + wave
                         + " (total: " + totalCounter.getCount() + ", per request: " + perRequestCounter.getCount() + ")";
                 logger.info("Processing complete, resuming response");
                 asyncResponse.resume(response);
